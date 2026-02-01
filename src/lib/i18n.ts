@@ -13,6 +13,7 @@ export const translations = {
       subtitle: "Construyendo experiencias digitales que unen funcionalidad e imaginación.",
       featured: "Proyectos Destacados",
       featuredDesc: "Selección de trabajos recientes.",
+      viewProjects: "Ver Proyectos",
     },
     portfolio: {
       title: "Portafolio",
@@ -67,6 +68,7 @@ export const translations = {
       subtitle: "Building digital experiences that bridge the gap between functionality and imagination.",
       featured: "Featured Work",
       featuredDesc: "Selected projects from my portfolio.",
+      viewProjects: "View Projects",
     },
     portfolio: {
       title: "Portfolio",

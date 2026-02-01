@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const CHARS = "-_~`!@#$%^&*()+=[]{}|;:,.<>?/";
+// Caracteres más limpios para mantener la armonía
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 interface DynamicTitleProps {
   titles: string[];
@@ -11,7 +12,6 @@ interface DynamicTitleProps {
 
 export default function DynamicTitle({ titles }: DynamicTitleProps) {
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState(titles[0]);
   const [scramble, setScramble] = useState(titles[0]);
 
   useEffect(() => {
@@ -27,20 +27,22 @@ export default function DynamicTitle({ titles }: DynamicTitleProps) {
             if (i < counter) {
               return targetText[i];
             }
+            // Elegir un caracter aleatorio limpio
             return CHARS[Math.floor(Math.random() * CHARS.length)];
           })
           .join("");
 
         setScramble(scrambled);
-        counter += 1 / 3;
+        // Aumentar la velocidad de resolución para que el "ruido" dure menos
+        counter += 1 / 2;
 
         if (counter >= targetText.length) {
           clearInterval(interval);
           setTimeout(() => {
             setIndex((prev) => (prev + 1) % titles.length);
-          }, 3000); // Wait 3 seconds before next title
+          }, 3000); // Esperar 3 segundos antes del siguiente título
         }
-      }, 30);
+      }, 40); // Velocidad de actualización
     };
 
     animateText();

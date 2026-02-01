@@ -126,3 +126,13 @@
 - **Top Bar (Mobile):** Solo muestra el selector de idioma para limpieza visual.
 - **Bottom Dock (Mobile):** Barra flotante inferior con iconos y etiquetas para navegación rápida (Home, Portfolio, Experience, Contact).
 - **Desktop:** Mantiene la barra superior flotante original.
+
+### [01-02-2026] - Pulido Visual y UX (High-End)
+**Cambio:** Mejoras estéticas y de interacción en todo el sitio.
+**Descripción:** Se elevó la calidad visual implementando partículas interactivas, tarjetas glassmorphism y transiciones de página.
+**Detalles:**
+- **Home:** Fondo de estrellas reactivo al mouse y CTA principal con gradiente.
+- **Project Cards:** Diseño Premium con efecto vidrio, aspect ratio 16:9 fijo y micro-interacciones hover.
+- **Skills:** Visualización con iconos y tarjetas en lugar de listas planas.
+- **About:** Foto de perfil con marco de luz y efectos de entrada.
+- **Transiciones:** Implementación de `template.tsx` para animaciones suaves entre rutas.
