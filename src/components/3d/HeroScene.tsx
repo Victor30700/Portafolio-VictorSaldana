@@ -6,7 +6,7 @@ import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random";
 
 function Stars(props: any) {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   // Generar posiciones iniciales
   const [sphere] = useState(() => random.inSphere(new Float32Array(6000), { radius: 1.2 }));
 
