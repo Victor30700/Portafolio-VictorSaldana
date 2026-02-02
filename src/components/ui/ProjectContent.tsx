@@ -54,11 +54,15 @@ export default function ProjectContent({ project }: { project: Project }) {
         )}
 
         {/* Hero Content */}
-        <div className="absolute bottom-0 left-0 p-8 md:p-16 max-w-4xl z-20 pointer-events-none">
-           <Link href="/portafolio" className="text-sm text-zinc-400 hover:text-white mb-4 inline-block pointer-events-auto transition-colors">
-              ← {t.portfolio.back}
+        <div className="absolute bottom-0 left-0 p-6 md:p-16 max-w-4xl z-20 pointer-events-none w-full">
+           <Link 
+             href="/portafolio" 
+             className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-medium hover:bg-white/10 hover:border-white/40 transition-all pointer-events-auto"
+           >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+              {t.portfolio.back}
            </Link>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-shadow">{title}</h1>
+          <h1 className="text-3xl md:text-6xl font-bold mb-4 text-shadow leading-tight">{title}</h1>
           
           <div className="flex flex-wrap gap-3 mb-6 pointer-events-auto">
             {project.stack.map((tech) => (

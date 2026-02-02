@@ -14,12 +14,16 @@ A high-performance, immersive portfolio website built with modern web technologi
 *   **Immersive 3D Experience**: Integrated **Three.js** & **React Three Fiber** hero section with interactive particles.
 *   **Bilingual Support (i18n)**: Full English/Spanish toggle with persistent state and instant content switching.
 *   **Modern UI/UX**:
-    *   **Glassmorphism** design language.
-    *   **Smooth Scroll** implementation using Lenis.
+    *   **Glassmorphism** design language applied to cards and navigation.
+    *   **Smooth Scroll** implementation using Lenis for a premium feel.
     *   **Framer Motion** animations (page transitions, hover effects, entrance animations).
-    *   **Responsive Design** with a specialized mobile-first bottom navigation dock.
+    *   **Responsive Design** with a specialized mobile-first bottom navigation dock (Apple-style dock).
+*   **Refined Navigation**:
+    *   Integrated static footer with "Back to Top" functionality.
+    *   Enhanced mobile navigation avoiding layout shifts.
+    *   Intuitive "Back to Portfolio" controls in deep views.
 *   **Dynamic Content**:
-    *   Project gallery with category filtering and immersive "lightbox" details.
+    *   Project gallery with category filtering (Web/Game) and immersive "lightbox" details.
     *   Timeline visualization for professional experience.
     *   Radar/Grid visualization for technical skills.
 *   **Contact Integration**: Fully functional contact form powered by **Resend** for server-side email delivery.

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +19,10 @@ export default function RootLayout({
       <body className={`${inter.className} bg-black text-white antialiased`}>
         <LanguageProvider>
           <Navbar />
-          <SmoothScroll>{children}</SmoothScroll>
+          <SmoothScroll>
+            {children}
+            <ScrollToTop />
+          </SmoothScroll>
         </LanguageProvider>
       </body>
     </html>

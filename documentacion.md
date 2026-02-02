@@ -133,7 +133,7 @@
 **Detalles:**
 - **Home:** Fondo de estrellas reactivo al mouse y CTA principal con gradiente.
 - **Project Cards:** Diseño Premium con efecto vidrio, aspect ratio 16:9 fijo y micro-interacciones hover.
-- **Skills:** Visualización con iconos y tarjetas en lugar de listas planas.
+- **Skills:** Visualización de habilidades mejorada.
 - **About:** Foto de perfil con marco de luz y efectos de entrada.
 - **Transiciones:** Implementación de `template.tsx` para animaciones suaves entre rutas.
 
@@ -141,8 +141,14 @@
 **Cambio:** Implementación funcional del formulario de contacto y ajustes responsive.
 **Descripción:** Se conectó el formulario de contacto con la API de Resend para el envío real de correos y se solucionaron problemas de usabilidad en móviles.
 **Detalles:**
-- **Backend (Server Actions):** Creación de `src/actions/send-email.ts` utilizando la librería `Resend` para envío seguro de emails desde el servidor.
-- **Seguridad:** Manejo de API Key mediante variables de entorno (`.env.local`).
-- **Frontend (ContactForm):** Actualización del botón de envío para ser sólido (gradiente) y tener mejor feedback visual (estado de carga y éxito).
-- **Responsive (Mobile):** Ajuste de padding inferior (`pb-32`) en la página de contacto para evitar que el Dock de navegación oculte el botón de enviar.
-- **Documentación:** Actualización completa del `README.md` para presentación pública y registro de cambios en `documentacion.md`.
+- **Backend (Server Actions):** Creación de `src/actions/send-email.ts` con `Resend`.
+- **Frontend (ContactForm):** Feedback visual (loading/success) y botón sólido.
+- **Responsive (Mobile):** Padding inferior ajustado en Contacto.
+
+### [02-02-2026] - Optimizaciones de Navegación y Estructura
+**Cambio:** Mejoras en la jerarquía de proyectos y navegación global.
+**Descripción:** Se reordenó la presentación de proyectos y se integró un pie de página funcional.
+**Detalles:**
+- **Reordenamiento de Proyectos:** Actualización de `src/data/projects.ts` para priorizar Proyectos Web sobre Juegos en la vista principal, destacando el perfil Fullstack.
+- **Global Footer (ScrollToTop):** Transformación del botón flotante "Volver Arriba" en un footer estático integrado en `layout.tsx`. Esto mejora la estética y evita conflictos visuales con la navegación móvil.
+- **Project Detail Navigation:** Rediseño del botón "Volver al Portafolio" en las páginas de detalle, adoptando un estilo "Glassmorphism" con icono para mayor visibilidad y facilidad de uso en móviles.
