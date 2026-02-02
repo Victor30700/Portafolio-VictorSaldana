@@ -43,7 +43,7 @@ export default function Home() {
           
           <div className="space-y-4">
             <DynamicTitle 
-              titles={["Senior Fullstack Engineer", "Game Developer", "Software Architect"]} 
+              titles={["Fullstack Engineer", "Game Developer", "Software Architect"]} 
             />
             <p className="max-w-xl mx-auto text-[#b0b0b0] md:text-xl font-light leading-relaxed">
               {t.home.subtitle}

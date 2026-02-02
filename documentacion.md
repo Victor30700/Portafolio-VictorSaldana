@@ -136,3 +136,13 @@
 - **Skills:** Visualización con iconos y tarjetas en lugar de listas planas.
 - **About:** Foto de perfil con marco de luz y efectos de entrada.
 - **Transiciones:** Implementación de `template.tsx` para animaciones suaves entre rutas.
+
+### [01-02-2026] - Integración de Correo y Correcciones Finales (Backend & UI)
+**Cambio:** Implementación funcional del formulario de contacto y ajustes responsive.
+**Descripción:** Se conectó el formulario de contacto con la API de Resend para el envío real de correos y se solucionaron problemas de usabilidad en móviles.
+**Detalles:**
+- **Backend (Server Actions):** Creación de `src/actions/send-email.ts` utilizando la librería `Resend` para envío seguro de emails desde el servidor.
+- **Seguridad:** Manejo de API Key mediante variables de entorno (`.env.local`).
+- **Frontend (ContactForm):** Actualización del botón de envío para ser sólido (gradiente) y tener mejor feedback visual (estado de carga y éxito).
+- **Responsive (Mobile):** Ajuste de padding inferior (`pb-32`) en la página de contacto para evitar que el Dock de navegación oculte el botón de enviar.
+- **Documentación:** Actualización completa del `README.md` para presentación pública y registro de cambios en `documentacion.md`.

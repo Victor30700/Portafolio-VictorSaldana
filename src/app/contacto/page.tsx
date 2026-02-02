@@ -7,7 +7,7 @@ export default function ContactPage() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 pt-24">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 pt-24 pb-32 md:pb-4">
         <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
             {/* Text Content */}

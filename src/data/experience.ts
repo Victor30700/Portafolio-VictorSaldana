@@ -10,7 +10,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "1",
-    role: "Senior Fullstack Engineer",
+    role: "Fullstack Engineer",
     company: "Tech Innovators Inc.",
     period: "2023 - Present",
     description: "Leading the development of scalable web applications using Next.js and .NET. Implementing AI-driven workflows to increase productivity by 40%.",

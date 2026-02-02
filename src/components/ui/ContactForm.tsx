@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
+import { sendEmail } from "@/actions/send-email";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -29,13 +30,22 @@ export default function ContactForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log(data);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
-    setTimeout(() => setIsSuccess(false), 5000);
+    try {
+      const result = await sendEmail(data);
+      if (result.success) {
+        setIsSuccess(true);
+        reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        console.error("Email send failed:", result.error);
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("An unexpected error occurred:", error);
+      alert("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -93,11 +103,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full relative group overflow-hidden rounded-lg bg-white p-[1px]"
+          className="w-full relative group overflow-hidden rounded-lg p-[1px] transition-transform active:scale-[0.98]"
         >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative bg-black rounded-lg px-4 py-3 transition-colors group-hover:bg-transparent">
-                 <span className="font-bold text-white flex items-center justify-center gap-2">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500" />
+            <div className="relative bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 rounded-lg px-4 py-4 transition-all duration-300">
+                 <span className="font-bold text-white flex items-center justify-center gap-2 text-lg uppercase tracking-wider">
                     {isSubmitting ? (
                         <>
                            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -119,7 +129,7 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             className="p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-center text-sm"
           >
-            Message sent successfully! I'll get back to you soon.
+            Message sent successfully! I&apos;ll get back to you soon.
           </motion.div>
         )}
       </form>
